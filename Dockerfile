@@ -1,7 +1,6 @@
-FROM node:14.17.0-alpine3.11 AS build
+FROM node:14.17.0-alpine3.11 AS  build
 
-# FROM node:12-slim
-
+#
 
 WORKDIR /src/app
 
@@ -18,6 +17,7 @@ COPY . .
 # Build production app
 RUN ng run  itcozmoz-web:prerender
 
+EXPOSE  4000
 
 
 CMD ["node" , "dist/itcozmoz-web/server/main.js"]
